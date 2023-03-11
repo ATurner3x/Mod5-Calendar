@@ -28,7 +28,40 @@ $(function () {
 
   // Current date display at top of calendar 
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
-}
+
+
+// Time block , past , present, future. & check with current time 
+
+$(".time-block").each(function() {
+  var currentTime = moment().hours();
+  var timeBlock = parseInt($(this).attr("id").split("-")[1]);
+  if (timeBlock < currentTime) {
+    $(this).addClass("past");
+  } else if (timeBlock === currentTime) {
+    $(this).addClass("present");
+  } else {
+    $(this).addClass("future");
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+});
 
 
 
@@ -55,5 +88,4 @@ $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
 
 
-
-);
+});
