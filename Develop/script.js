@@ -43,7 +43,13 @@ $(".time-block").each(function() {
     $(this).addClass("future");
   }
 
+// save user response to local storage
 
+$(".saveBtn").on("click", function() {
+  var timeBlock = $(this).parent().attr("id");
+  var description = $(this).siblings(".description").val();
+  localStorage.setItem(timeBlock, description);
+});
 
 
 
