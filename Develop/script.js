@@ -51,6 +51,15 @@ $(".saveBtn").on("click", function() {
   localStorage.setItem(timeBlock, description);
 });
 
+// load user response from local sotrage on reload
+
+$(".description").each(function() {
+  var timeBlock = $(this).parent().attr("id");
+  var savedData = localStorage.getItem(timeBlock);
+  if (savedData) {
+    $(this).val(savedData);
+  }
+});
 
 
 
